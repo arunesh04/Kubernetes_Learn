@@ -30,7 +30,7 @@ const UserRegistration = () => {
         region,
       };
 
-      const response = await axios.post('http://127.0.0.1:52188/api/user', userData);
+      const response = await axios.post('https://10.99.211.244:3000/api/user', userData);
       console.log(response.data);
       
       setName('');

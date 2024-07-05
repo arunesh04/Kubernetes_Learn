@@ -29,7 +29,7 @@ const AdminRegistrationPage = () => {
         
       };
 
-      const response = await axios.post('http://127.0.0.1:52188/api/admin', adminData);
+      const response = await axios.post('https://10.99.211.244:3000/api/admin', adminData);
 
       console.log(response.data); 
 

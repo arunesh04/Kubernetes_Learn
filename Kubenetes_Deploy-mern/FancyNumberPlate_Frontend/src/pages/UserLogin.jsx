@@ -27,7 +27,7 @@ const UserLogin = () => {
     e.preventDefault();
 
     try {
-            const response = await axios.get(`http://127.0.0.1:52188/api/user/get/${name}`);
+            const response = await axios.get(`https://10.99.211.244:3000/api/user/get/${name}`);
             if(response.data.email === email && response.data.password === password){
                 console.log(response.data)
                 localStorage.setItem('emailu', email);

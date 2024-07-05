@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
 
 module.exports.connectdb = ()=>{
-    return mongoose.connect("mongodb://127.0.0.1:50991/numberplate")
+    return mongoose.connect("mongodb://10.98.153.247:3000/numberplate")
 }

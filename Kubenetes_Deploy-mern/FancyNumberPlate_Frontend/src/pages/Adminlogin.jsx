@@ -27,7 +27,7 @@ const AdminLogin = () => {
     e.preventDefault();
 
     try {
-            const response = await axios.get(`http://127.0.0.1:52188/api/admin/get/${id}`);
+            const response = await axios.get(`https://10.99.211.244:3000/api/admin/get/${id}`);
             console.log(response.data)
             if(response.data.name === name && response.data.password === password){
                 console.log(response.data)
