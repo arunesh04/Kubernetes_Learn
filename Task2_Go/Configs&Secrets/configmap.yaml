@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: goserver-config
+  namespace: goserver-namespace
+data:
+  app_name: go-app

@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: goserver
+  namespace: goserver-namespace
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: goserver
+  template:
+    metadata:
+      labels:
+        app: goserver
+    spec:
+      containers:
+      - name: goserver
+        image: goserver:latest
+        imagePullPolicy: Never
+        envFrom:
+        - configMapRef:
+            name: goserver-config
+        env:
+        - name: SECRET_KEY
+          valueFrom:
+            secretKeyRef:
+              name: goserver-secret
+              key: secret-key
+        - name: SECRET_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: goserver-secret
+              key: secret-token
+        ports:
+        - containerPort: 8000
+        volumeMounts:
+        - name: secret-volume
+          mountPath: /etc/secret
+          readOnly: true
+      volumes:
+      - name: secret-volume
+        secret:
+          secretName: goserver-secret
