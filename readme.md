@@ -40,6 +40,17 @@ $ kubectl scale deployment/nginx-deployment --replicas=10
 
 $ kubectl autoscale deployment/nginx-deployment --min=10 --max=15 --cpu-percent=80
 
+## Minikube 
+
+### Eval Docker env to Minikube 
+
+$ eval $(minikube -p minikube docker-env)
+
+### Service Url and Tunelling to local 
+
+$ minikube service <service_name> --url 
+
+
 
 
 
