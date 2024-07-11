@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-backend-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: go-backend
+  template:
+    metadata:
+      labels:
+        app: go-backend
+    spec:
+      containers:
+        - name: go-backend
+          image: go-redis
+          imagePullPolicy: Never 
+          ports:
+            - containerPort: 9000
+          envFrom:
+            - configMapRef:
+                name: go-backend-config

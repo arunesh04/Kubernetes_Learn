@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: go-backend-config
+data:
+  APP_NAME: test-service
+  HTTP_PORT: "9000"
+  REDIS_HOST: redis-service
+  REDIS_PORT: "6379"
