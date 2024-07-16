@@ -1,4 +1,4 @@
-$ helm install -f postgress.yaml postgres ./postgress
+$ helm install -f postgress.yaml postgres ./postgress-chart
 
 $ helm list
 
