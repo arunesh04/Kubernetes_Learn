@@ -3,7 +3,7 @@ postgres:
   name: postgres
   group: db
   container:
-    image: postgres:9.6-alpine
+    image: postgres:12.3-alpine
     port: 5432
   service:
     type: ClusterIP
